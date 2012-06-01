@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>The 1140px Grid &middot; Fluid down to mobile</title>
+	<title>Discussione</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
@@ -13,265 +13,122 @@
 	<!-- The 1140px Grid - http://cssgrid.net/ -->
 	<link rel="stylesheet" href="css/1140.css" type="text/css" media="screen" />
 	
-	<!-- Your styles -->
-	<link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
+    <link href="http://fonts.googleapis.com/css?family=Pontano+Sans" rel="stylesheet" type="text/css">
+    
+	<!-- Application -->
+	<link rel="stylesheet" href="less/app.less" type="text/less" media="screen" />
 	
 	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
 	<script type="text/javascript" src="js/css3-mediaqueries.js"></script>
-	
-	<!--Delete embedded styles, just for example.-->
-	<style type="text/css">
-	
-	body {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	}
-	
-	.container p {
-	color: #fff;
-	line-height: 100px;
-	background: #000;
-	text-align: center;
-	margin: 20px 0 0 0;
-	}
-	
-	</style>
-
+	<script type="text/javascript" src="js/less-1.3.0.min.js"></script>
 </head>
 
-
 <body>
+    <div class="container">
+        <div class="row add-top">
+            
+            <div class="row add-bottom">
+                <div id="header" class="twelvecol"></div>
+            </div>            
+            
+            <!-- Discussions --> 
+            
+            <div class="row add-bottom">
+                <h1>Choose a programming language</h1>
+                
+                <div id="discussions" class="twelvecol">
 
-<div class="container">
-	<div class="row">
-		<div class="onecol">
-			<p>One</p>
-		</div>
-		<div class="onecol">
-			<p>One</p>
-		</div>
-		<div class="onecol">
-			<p>One</p>
-		</div>
-		<div class="onecol">
-			<p>One</p>
-		</div>
-		<div class="onecol">
-			<p>One</p>
-		</div>
-		<div class="onecol">
-			<p>One</p>
-		</div>
-		<div class="onecol">
-			<p>One</p>
-		</div>
-		<div class="onecol">
-			<p>One</p>
-		</div>
-		<div class="onecol">
-			<p>One</p>
-		</div>
-		<div class="onecol">
-			<p>One</p>
-		</div>
-		<div class="onecol">
-			<p>One</p>
-		</div>
-		<div class="onecol last">
-			<p>One</p>
-		</div>
-	</div>
-</div>
+                    <div class="say">
+                        <div class="left">
+                            <div class="motion">
+                                <div class="timestamp centrify">10:30</div>
+                                <div class="who centrify">A</div>
+                            </div>
 
-<div class="container">
-	<div class="row">
-		<div class="twocol">
-			<p>Two columns</p>
-		</div>
-		<div class="twocol">
-			<p>Two columns</p>
-		</div>
-		<div class="twocol">
-			<p>Two columns</p>
-		</div>
-		<div class="twocol">
-			<p>Two columns</p>
-		</div>
-		<div class="twocol">
-			<p>Two columns</p>
-		</div>
-		<div class="twocol last">
-			<p>Two columns</p>
-		</div>
-	</div>
-</div>
+                            <ol class="topics">
+                                <li class="new">Functional Programming</li>
+                                <li class="new">Object-oriented Programming</li>
+                            </ol>
+                        </div>
+                    </div>
 
-<div class="container">
-	<div class="row">
-		<div class="threecol">
-			<p>Three columns</p>
-		</div>
-		<div class="threecol">
-			<p>Three columns</p>
-		</div>
-		<div class="threecol">
-			<p>Three columns</p>
-		</div>
-		<div class="threecol last">
-			<p>Three columns</p>
-		</div>
-	</div>
-</div>
+                    <div class="say">
+                        <div class="left">
+                            <div class="motion">
+                                <div class="timestamp centrify">10:34</div>
+                                <div class="who centrify">B</div>
+                            </div>
 
-<div class="container">
-	<div class="row">
-		<div class="fourcol">
-			<p>Four columns</p>
-		</div>
-		<div class="fourcol">
-			<p>Four columns</p>
-		</div>
-		<div class="fourcol last">
-			<p>Four columns</p>
-		</div>
-	</div>
-</div>
+                            <ol class="topics">
+                                <li>Functional Programming</li>
+                                <li class="new someone">A</li>
+                                <li class="new">Scala</li>
+                            </ol>
+                        </div>
+                    </div>
 
-<div class="container">
-	<div class="row">
-		<div class="onecol">
-			<p>One</p>
-		</div>
-		<div class="elevencol last">
-			<p>Eleven columns</p>
-		</div>
-	</div>
-</div>
+                    <div class="say">
+                        <div class="left">
+                            <div class="motion">
+                                <div class="timestamp centrify">10:36</div>
+                                <div class="who centrify">C</div>
+                            </div>
 
-<div class="container">
-	<div class="row">
-		<div class="twocol">
-			<p>Two columns</p>
-		</div>
-		<div class="tencol last">
-			<p>Ten columns</p>
-		</div>
-	</div>
-</div>
+                            <ol class="topics">
+                                <li>Scala</li>
+                                <li class="new">Haskell</li>
+                            </ol>
+                        </div>
+                    </div> 
+                    
+                    <div class="say">
+                        <div class="left">
+                            <div class="motion">
+                                <div class="timestamp centrify">10:37</div>
+                                <div class="who centrify">B</div>
+                            </div>
 
-<div class="container">
-	<div class="row">
-		<div class="threecol">
-			<p>Three columns</p>
-		</div>
-		<div class="ninecol last">
-			<p>Nine columns</p>
-		</div>
-	</div>
-</div>
-
-<div class="container">
-	<div class="row">
-		<div class="fourcol">
-			<p>Four columns</p>
-		</div>
-		<div class="eightcol last">
-			<p>Eight columns</p>
-		</div>
-	</div>
-</div>
-
-<div class="container">
-	<div class="row">
-		<div class="fivecol">
-			<p>Five columns</p>
-		</div>
-		<div class="sevencol last">
-			<p>Seven columns</p>
-		</div>
-	</div>
-</div>
-
-<div class="container">
-	<div class="row">
-		<div class="sixcol">
-			<p>Six columns</p>
-		</div>
-		<div class="sixcol last">
-			<p>Six columns</p>
-		</div>
-	</div>
-</div>
-
-<div class="container">
-	<div class="row">
-		<div class="sevencol">
-			<p>Seven columns</p>
-		</div>
-		<div class="fivecol last">
-			<p>Five columns</p>
-		</div>
-	</div>
-</div>
-
-<div class="container">
-	<div class="row">
-		<div class="eightcol">
-			<p>Eight columns</p>
-		</div>
-		<div class="fourcol last">
-			<p>Four columns</p>
-		</div>
-	</div>
-</div>
-
-<div class="container">
-	<div class="row">
-		<div class="ninecol">
-			<p>Nine columns</p>
-		</div>
-		<div class="threecol last">
-			<p>Three columns</p>
-		</div>
-	</div>
-</div>
-
-<div class="container">
-	<div class="row">
-		<div class="tencol">
-			<p>Ten columns</p>
-		</div>
-		<div class="twocol last">
-			<p>Two columns</p>
-		</div>
-	</div>
-</div>
-
-<div class="container">
-	<div class="row">
-		<div class="elevencol">
-			<p>Eleven columns</p>
-		</div>
-		<div class="onecol last">
-			<p>One</p>
-		</div>
-	</div>
-</div>
-
-<div class="container">
-	<div class="row">
-		<div class="threecol">
-			<p>Three columns</p>
-		</div>
-		<div class="sixcol">
-			<p>Six columns</p>
-		</div>
-		<div class="threecol last">
-			<p>Three columns</p>
-		</div>
-	</div>
-</div>
-
-
+                            <ol class="topics">
+                                <li class="new someone">C</li>
+                                <li>Object-oriented Programming</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Statistics -->
+            
+            <div class="fourcol">
+                <h2>Most frequent topics</h1>
+                
+                <ol>
+                    <li>Functional Programming</li>
+                    <li>Scala</li>
+                    <li>Object-oriented Programming</li>
+                </ol>
+            </div>
+            
+            <div class="fourcol">
+                <h2>Most frequent talkers</h1>
+                
+                <ol>
+                    <li>B</li>
+                    <li>A</li>
+                    <li>C</li>
+                </ol>
+            </div>
+            
+            <div class="fourcol last">
+                <h2>Most mentioned talkers</h1>
+                
+                <ol>
+                    <li>A</li>
+                    <li>C</li>
+                </ol>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

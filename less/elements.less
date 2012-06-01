@@ -1,0 +1,71 @@
+body 
+{
+    background-color: @white;
+
+    font-family: "Pontano Sans";
+    font-size: 14px;
+
+    cursor: default;
+}
+
+li { list-style: none; }
+
+h1, h2, h3, h4 { text-transform: uppercase; .half-bottom; }
+h1             { .add-bottom; }
+
+/*
+ * Discussions
+ */
+
+#discussions
+{
+    padding-bottom: 50px;
+
+    white-space: nowrap;
+    overflow-x:  scroll;
+
+    .say
+    {
+        display: inline-block;
+
+        .motion
+        {
+            .left;
+            .timestamp { height: 20px; }
+
+            .who
+            {
+                width:  60px;
+                height: 60px;
+
+                line-height:    60px;
+                vertical-align: center;
+
+                background-color: @background;
+
+                .round(30px);
+            }
+        }
+
+        .topics
+        {
+            .left;
+
+            margin-top: 36px;
+
+            li
+            {
+                float:   left;
+                margin:  0px 5px;
+                padding: 4px;
+                
+                border: 1px solid lightgrey;
+                
+                .round();
+
+                &.new     { background-color: @success; border-color: @success; }
+                &.someone { .centrify; .round(100px); }
+            }
+        }
+    }
+}
