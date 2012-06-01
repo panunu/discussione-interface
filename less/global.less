@@ -11,8 +11,8 @@
 .half-top   { margin-top: 15px; }
 .remove-top { margin-top:  0px; }
 
-.add-bottom    { margin-bottom: 30px; }
-.half-bottom   { margin-bottom: 15px; }
+.add-bottom    { margin-bottom: 40px; }
+.half-bottom   { margin-bottom: 20px; }
 .remove-bottom { margin-bottom:  0px; }
 
 .nowrap { white-space: nowrap; }
@@ -22,4 +22,11 @@
     border-radius:         @radius;
     -webkit-border-radius: @radius;
     -moz-border-radius:    @radius;
+}
+
+.shadow()
+{
+    -moz-box-shadow:    0px 0px 10px 1px #ccc;
+    -webkit-box-shadow: 0px 0px 10px 1px #ccc;
+    box-shadow:         0px 0px 10px 1px #ccc;
 }
