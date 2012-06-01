@@ -2,8 +2,8 @@ body
 {
     background-color: @white;
 
-    font-family: "Quicksand";
-    font-size: 14px;
+    font-family: @font;
+    font-size:   14px;
 
     cursor: default;
 }
@@ -11,7 +11,10 @@ body
 li { list-style: none;  }
 
 h1, h2, h3, h4 { text-transform: uppercase; .half-bottom; }
-h1             { .add-bottom; }
+h1 { font-size: 36px; .add-bottom; }
+h2 { font-size: 24px; }            
+h3 { font-size: 18px; }            
+h4 { font-size: 16px; }            
 
 span.label
 {
@@ -26,13 +29,39 @@ span.label
     .round();
 }
 
+::-webkit-scrollbar       { height: 10px; }
+::-webkit-scrollbar-track { background-color: white; .round(10px);   }
+::-webkit-scrollbar-thumb { background-color: black; .round(); }
+
+button, a.button, submit
+{
+    padding: 10px;
+ 
+    font-family:    @font;
+    font-size:      16px;
+    text-transform: uppercase;
+
+    border: 0px;
+    .round();
+
+    cursor: pointer;
+} 
+
+
+/*
+ * Header
+ */
+
+#header {}
+
+
 /*
  * Discussions
  */
 
 #discussions
 {
-    padding-bottom: 30px;
+    padding-bottom: 10px;
 
     white-space: nowrap;
     overflow-x:  scroll;
@@ -44,20 +73,15 @@ span.label
         .motion
         {
             .left;
-            .timestamp { height: 20px; }
+            .timestamp { height: 20px; font-size: smaller; }
 
             .who
             {
-                width:  60px;
-                height: 60px;
+                margin: 0px 40px;
 
-                margin: 0px 10px;
-
-                line-height:    60px;
-                vertical-align: center;
+                font-size: x-large;
 
                 .round(30px);
-                .shadow();
             }
         }
 
@@ -65,23 +89,25 @@ span.label
         {
             .left;
 
-            margin-top: 36px;
+            margin-top: 22px;
 
             li
             {
-                float:   left;
-                margin:  0px 5px;
+                .left;
+
+                margin:  0px 2px;
                 padding: 4px;
                 
-                border: 1px solid lightgrey;
+                border: 1px solid #eee;
                 
+                .gradient(#fff, #efefef);
                 .round();
 
-                &.new     { background-color: @success; border-color: @success; }
+                &.new     { .gradient(lighten(@success, 15%), @success); border-color: lighten(@success, 10%); }
                 &.someone { .centrify; .round(100px); }
             }
         }
     }
 
-    .end { margin-left: 50px; font-size: 48px; font-family: "Parisienne"; }
+    .end { display: inline-block; margin: 0px 50px 0px 50px; font-size: 64px; font-family: "Parisienne"; }
 }

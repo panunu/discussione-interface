@@ -25,113 +25,120 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row add-top">
-            
-            <div class="row add-bottom">
-                <div id="header" class="twelvecol"></div>
-            </div>            
-            
-            <!-- Discussions --> 
-            
-            <div class="row add-bottom">
-                <h1>Discussion about programming languages</h1>
-                
-                <div id="discussions" class="twelvecol">
+    <div class="container">            
+        <div class="row add-top add-bottom">
+            <div id="header" class="twocol"></div>
 
-                    <div class="say">
-                        <div class="left">
-                            <div class="motion">
-                                <div class="timestamp centrify">10:30</div>
-                                <div class="who centrify">A</div>
-                            </div>
+            <div class="tencol last"></div>
+        </div>            
 
-                            <ol class="topics">
-                                <li class="new">Functional Programming</li>
-                                <li class="new">Object-oriented Programming</li>
-                            </ol>
+        <!-- Discussions --> 
+
+        <div class="row add-bottom">
+            <h1>Debate about programming languages</h1>
+
+            <div id="discussions" class="twelvecol">
+
+                <div class="say">
+                    <div class="left">
+                        <div class="motion">
+                            <div class="timestamp centrify">10:30</div>
+                            <div class="who centrify">Beck</div>
                         </div>
-                    </div>
 
-                    <div class="say">
-                        <div class="left">
-                            <div class="motion">
-                                <div class="timestamp centrify">10:34</div>
-                                <div class="who centrify">B</div>
-                            </div>
-
-                            <ol class="topics">
-                                <li>Functional Programming</li>
-                                <li class="new someone">A</li>
-                                <li class="new">Scala</li>
-                            </ol>
-                        </div>
-                    </div>
-
-                    <div class="say">
-                        <div class="left">
-                            <div class="motion">
-                                <div class="timestamp centrify">10:36</div>
-                                <div class="who centrify">C</div>
-                            </div>
-
-                            <ol class="topics">
-                                <li>Scala</li>
-                                <li class="new">Haskell</li>
-                            </ol>
-                        </div>
-                    </div> 
-                    
-                    <div class="say">
-                        <div class="left">
-                            <div class="motion">
-                                <div class="timestamp centrify">10:37</div>
-                                <div class="who centrify">B</div>
-                            </div>
-
-                            <ol class="topics">
-                                <li class="new someone">C</li>
-                                <li>Object-oriented Programming</li>
-                                <li>Functional Programming</li>
-                            </ol>
-                        </div>
-                    </div>
-                    
-                    <div class="say">
-                        <div class="left end">Fin</div>
+                        <ol class="topics">
+                            <li class="new">Functional Programming</li>
+                            <li class="new">Object-oriented Programming</li>
+                        </ol>
                     </div>
                 </div>
+
+                <div class="say">
+                    <div class="left">
+                        <div class="motion">
+                            <div class="timestamp centrify">10:34</div>
+                            <div class="who centrify">Fowler</div>
+                        </div>
+
+                        <ol class="topics">
+                            <li>Functional Programming</li>
+                            <li class="new someone">Beck</li>
+                            <li class="new">Scala</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="say">
+                    <div class="left">
+                        <div class="motion">
+                            <div class="timestamp centrify">10:36</div>
+                            <div class="who centrify">Martin</div>
+                        </div>
+
+                        <ol class="topics">
+                            <li>Scala</li>
+                            <li class="new">Haskell</li>
+                        </ol>
+                    </div>
+                </div> 
+
+                <div class="say">
+                    <div class="left">
+                        <div class="motion">
+                            <div class="timestamp centrify">10:37</div>
+                            <div class="who centrify">Fowler</div>
+                        </div>
+
+                        <ol class="topics">
+                            <li class="new someone">Martin</li>
+                            <li>Object-oriented Programming</li>
+                            <li>Functional Programming</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="end">Fin</div>
             </div>
-            
-            <!-- Statistics -->
-            
-            <div class="fourcol">
+        </div>
+
+        <!-- Statistics -->
+
+        <div class="row">
+            <div class="fourcol add-bottom">
                 <h2>Frequent</h1>
-                
+
                 <ol>
-                    <li>Functional Programming <span class="label right">3</span></li>
-                    <li>Scala <span class="label right">2</span></li>
-                    <li>Object-oriented Programming <span class="label right">2</span></li>
+                    <li><span class="label">3</span> Functional Programming</li>
+                    <li><span class="label">2</span> Scala</li>
+                    <li><span class="label">2</span> Object-oriented Programming</li>
                 </ol>
             </div>
-            
-            <div class="fourcol">
+
+            <div class="fourcol add-bottom">
                 <h2>Active</h1>
-                
+
                 <ol>
-                    <li>B</li>
-                    <li>A</li>
-                    <li>C</li>
+                    <li>Fowler</li>
+                    <li>Beck</li>
+                    <li>Martin</li>
                 </ol>
             </div>
-            
-            <div class="fourcol last">
+
+            <div class="fourcol last add-bottom">
                 <h2>Mentioned</h1>
-                
+
                 <ol>
-                    <li>A</li>
-                    <li>C</li>
+                    <li>Beck</li>
+                    <li>Martin</li>
                 </ol>
+            </div>
+        </div>
+
+        <!-- Full conversation -->
+
+        <div class="row">
+            <div class="twelvecol add-bottom add-top centrify">
+                <button>Show the full conversation</button>
             </div>
         </div>
     </div>
