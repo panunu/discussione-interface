@@ -38,22 +38,23 @@ button, a.button, submit
     padding: 10px;
  
     font-family:    @font;
-    font-size:      16px;
+    font-size:      14px;
     text-transform: uppercase;
 
-    border: 0px;
+    border: 1px solid #555;
     .round();
 
-    cursor: pointer;
-} 
+    .gradient(#444, #000);
+    color: white;
 
+    cursor: pointer;
+}
 
 /*
  * Header
  */
 
 #header {}
-
 
 /*
  * Discussions
@@ -65,10 +66,14 @@ button, a.button, submit
 
     white-space: nowrap;
     overflow-x:  scroll;
+    
+    cursor: ew-resize;
 
     .say
     {
         display: inline-block;
+
+        cursor: default;
 
         .motion
         {
