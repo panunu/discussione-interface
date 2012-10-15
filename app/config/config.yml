@@ -69,5 +69,8 @@ old_sound_rabbit_mq:
             vhost:    '/'
 
     producers:
+        upload_material:
+            connection: default
+            exchange_options: { name: 'upload-material', type: direct }
 
     consumers:
