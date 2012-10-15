@@ -57,3 +57,17 @@ swiftmailer:
     username:  %mailer_user%
     password:  %mailer_password%
     spool:     { type: memory }
+
+# RabbitMQ Configuration
+old_sound_rabbit_mq:
+    connections:
+        default:
+            host:     %rabbit_host%
+            port:     %rabbit_port%
+            user:     %rabbit_user%
+            password: %rabbit_password%
+            vhost:    '/'
+
+    producers:
+
+    consumers:

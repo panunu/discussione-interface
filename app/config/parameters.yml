@@ -11,5 +11,11 @@ parameters:
     mailer_user:       ~
     mailer_password:   ~
 
+    rabbit_host:       localhost
+    rabbit_port:       5672
+    rabbit_user:       guest
+    rabbit_password:   guest
+
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
+
