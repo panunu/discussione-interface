@@ -7,8 +7,8 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class DiscussioneUploadBundle extends Bundle
 {
-	public function build(ContainerBuilder $builder)
-	{
+    public function build(ContainerBuilder $builder)
+    {
 
-	}
+    }
 }
