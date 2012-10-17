@@ -14,6 +14,6 @@ class MaterialType extends AbstractType
 
     public function getName()
     {
-        return 'discussione.form.material';
+        return 'discussione_form_material';
     }
 }

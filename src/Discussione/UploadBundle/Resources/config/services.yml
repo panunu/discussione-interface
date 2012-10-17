@@ -1,0 +1,3 @@
+services:
+    discussione_upload.service.message:
+        class: "Discussione\UploadBundle\Service\MessageService"
