@@ -2,7 +2,7 @@
 
 namespace Discussione\UploadBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Discussione\FrameworkBundle\Controller\Controller;
 use OldSound\RabbitMqBundle\RabbitMq\Producer;
 use Symfony\Component\HttpFoundation\Response;
 use Discussione\UploadBundle\Model\Material;
@@ -15,18 +15,16 @@ class UploadController extends Controller
     {
         $form = $this->createForm(new MaterialType(), new Material());
 
-        // TODO: Abstractify Form processing.
-        if ($this->getRequest()->getMethod() === 'POST') {
-            $form->bind($this->getRequest());
-            if ($form->isValid()) {
-                $file = $form->getData()->file;
+        if ($this->validateForm($form)) {
+            $file = $form->getData()->file;
 
-                $this->getUploadMaterialProducer()->publish(
-                    $this->getMessageService()->encode($file)
-                );
+            $this->getUploadMaterialProducer()->publish(
+                $this->getMessageService()->encode($file)
+            );
 
-                unset($file);
-            }
+            unset($file);
+
+            // TODO: Redirect.
         }
 
         return $this->render('DiscussioneUploadBundle:Upload:upload.html.twig', array(
