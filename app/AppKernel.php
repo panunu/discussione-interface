@@ -24,7 +24,9 @@ class AppKernel extends Kernel
 
 	private function getApplicationBundles()
 	{
-		return array();
+		return array(
+			new Discussione\UploadBundle\DiscussioneUploadBundle()
+		);
 	}
 
 	private function getExternalBundles()

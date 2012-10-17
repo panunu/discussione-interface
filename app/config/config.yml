@@ -72,5 +72,3 @@ old_sound_rabbit_mq:
         upload_material:
             connection: default
             exchange_options: { name: 'upload-material', type: direct }
-
-    consumers:
