@@ -18,6 +18,7 @@ class UploadController extends Controller
         if ($this->validateForm($form)) {
             $file = $form->getData()->file;
 
+            // TODO: Move to MessageService.
             $this->getUploadMaterialProducer()->publish(
                 $this->getMessageService()->encode($file)
             );
@@ -25,6 +26,7 @@ class UploadController extends Controller
             unset($file);
 
             // TODO: Redirect.
+            // TODO: Show loader animation, and check every 10 seconds if material has been processed.
         }
 
         return $this->render('DiscussioneUploadBundle:Upload:upload.html.twig', array(
