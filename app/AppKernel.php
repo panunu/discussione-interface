@@ -25,14 +25,15 @@ class AppKernel extends Kernel
 	private function getApplicationBundles()
 	{
 		return array(
-			new Discussione\UploadBundle\DiscussioneUploadBundle()
+			new Discussione\UploadBundle\DiscussioneUploadBundle(),
+			new Discussione\DocumentBundle\DiscussioneDocumentBundle(),
 		);
 	}
 
 	private function getExternalBundles()
 	{
 		return array(
-			new OldSound\RabbitMqBundle\OldSoundRabbitMqBundle()
+			new OldSound\RabbitMqBundle\OldSoundRabbitMqBundle(),
 		);
 	}
 
@@ -45,7 +46,7 @@ class AppKernel extends Kernel
 			new Symfony\Bundle\MonologBundle\MonologBundle(),
 			new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
 			new Symfony\Bundle\AsseticBundle\AsseticBundle(),
-			new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+            new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
 			new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 			new JMS\AopBundle\JMSAopBundle(),
 			new JMS\DiExtraBundle\JMSDiExtraBundle($this),
