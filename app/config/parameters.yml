@@ -1,8 +1,7 @@
 parameters:
-    database_driver:   pdo_mysql
     database_host:     localhost
-    database_port:     ~
-    database_name:     symfony
+    database_port:     27017
+    database_name:     discussione
     database_user:     root
     database_password: ~
 

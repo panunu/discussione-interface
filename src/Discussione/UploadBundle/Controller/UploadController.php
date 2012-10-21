@@ -26,7 +26,7 @@ class UploadController extends Controller
             unset($file);
 
             // TODO: Redirect.
-            // TODO: Show loader animation, and check every 10 seconds if material has been processed.
+            // TODO: Show a loader animation, and check for every 10 seconds if material has been processed.
         }
 
         return $this->render('DiscussioneUploadBundle:Upload:upload.html.twig', array(
