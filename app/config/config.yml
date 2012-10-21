@@ -83,5 +83,5 @@ old_sound_rabbit_mq:
     producers:
         upload_material:
             connection: default
-            exchange_options: { name: 'upload-material', type: direct }
+            exchange_options: { name: 'unprocessed', type: direct }
 
