@@ -81,8 +81,15 @@ old_sound_rabbit_mq:
             vhost:    '/'
 
     producers:
-        upload_material:
+        unprocessed:
             connection: default
             exchange_options: { name: 'unprocessed', type: direct }
             queue_options: {name: 'unprocessed'}
+
+    consumers:
+        processed:
+            connection: default
+            exchange_options: { name: 'processed', type: direct }
+            queue_options: { name: 'processed' }
+            callback: discussione_message.consumer.processed
 
