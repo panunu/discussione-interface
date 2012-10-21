@@ -23,7 +23,11 @@ class DocumentService
         $this->connection->close();
     }
 
-    public function insert($data)
+    /**
+     * @param array $data
+     * @return array|bool
+     */
+    public function insert(array $data)
     {
         return $this->getDatabase()->selectCollection('discussions')->insert($data);
     }
