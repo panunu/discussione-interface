@@ -27,6 +27,7 @@ class AppKernel extends Kernel
 		return array(
 			new Discussione\UploadBundle\DiscussioneUploadBundle(),
 			new Discussione\DocumentBundle\DiscussioneDocumentBundle(),
+			new Discussione\MessageBundle\DiscussioneMessageBundle(),
 		);
 	}
 

@@ -1,0 +1,4 @@
+services:
+    discussione_message.service.message:
+        class: "Discussione\MessageBundle\Service\MessageService"
+        arguments: ["@old_sound_rabbit_mq.upload_material_producer"]
