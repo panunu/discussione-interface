@@ -5,3 +5,4 @@ services:
 
     discussione_message.consumer.processed:
         class: Discussione\MessageBundle\Consumer\ProcessedConsumer
+        arguments: ["@discussione_document.service.document"]

@@ -29,7 +29,7 @@ class DocumentService
      */
     public function insert(array $data)
     {
-        return $this->getDatabase()->selectCollection('discussions')->insert($data);
+        return $this->getDatabase()->selectCollection('discussion')->insert($data);
     }
 
     /**
@@ -37,7 +37,7 @@ class DocumentService
      */
     public function all()
     {
-        return $this->getDatabase()->selectCollection('discussions')->find();
+        return $this->getDatabase()->selectCollection('discussion')->find();
     }
 
     /**
