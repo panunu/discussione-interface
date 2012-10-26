@@ -1,3 +1,6 @@
-{% for say in discussion %}
-    
+{% for speech in discussion.messages %}
+    {% for keyphrase, frequency in speech.keyphrases %}
+        {{ keyphrase }}
+        {{ frequency }}
+    {% endfor %}
 {% endfor %}

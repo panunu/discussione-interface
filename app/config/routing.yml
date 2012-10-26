@@ -1,5 +1,5 @@
 DiscussioneUploadBundle:
     resource: "@DiscussioneUploadBundle/Resources/config/routing.yml"
 
-DiscussioneUploadBundle:
+DiscussioneDiscussionBundle:
     resource: "@DiscussioneDiscussionBundle/Resources/config/routing.yml"
