@@ -13,6 +13,12 @@ class DiscussionController extends Controller
      */
     public function viewAction($id)
     {
+        $discussion = $this->getDocumentService()->getById($id);
+
+        if (!$discussion) {
+            throw $this->createNotFoundException('Discussion not found');
+        }
+
         return $this->render('DiscussioneDiscussionBundle:Discussion:view.html.twig', array(
             'discussion' => $this->getDocumentService()->getById($id),
         ));
