@@ -28,6 +28,7 @@ class AppKernel extends Kernel
 			new Discussione\UploadBundle\DiscussioneUploadBundle(),
 			new Discussione\DocumentBundle\DiscussioneDocumentBundle(),
 			new Discussione\MessageBundle\DiscussioneMessageBundle(),
+			new Discussione\DiscussionBundle\DiscussioneDiscussionBundle(),
 		);
 	}
 

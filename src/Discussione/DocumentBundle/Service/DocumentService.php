@@ -5,6 +5,7 @@ namespace Discussione\DocumentBundle\Service;
 use Doctrine\MongoDB\Connection;
 use Doctrine\MongoDB\LoggableDatabase;
 use Doctrine\MongoDB\Cursor;
+use MongoId;
 
 class DocumentService
 {
@@ -38,6 +39,17 @@ class DocumentService
     public function all()
     {
         return $this->getDatabase()->selectCollection('discussion')->find();
+    }
+
+    /**
+     * @param $id
+     * @return array|int|MongoCursor|null
+     */
+    public function getById($id)
+    {
+        return $this->getDatabase()->selectCollection('discussion')->findOne(
+            array('_id' => new MongoId($id))
+        );
     }
 
     /**
