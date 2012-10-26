@@ -1,0 +1,8 @@
+{% for discussion in discussions %}
+    <li>
+    <a href="{{ path('discussione_discussion_view', { 'id': discussion._id }) }}">
+        {{ discussion._id }}
+    </a>
+    </li>
+{% endfor %}
+

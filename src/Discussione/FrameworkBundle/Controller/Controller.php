@@ -4,6 +4,7 @@ namespace Discussione\FrameworkBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller as BaseController;
 use Symfony\Component\Form\Form;
+use Symfony\Component\HttpFoundation\Response;
 
 class Controller extends BaseController
 {
@@ -20,5 +21,25 @@ class Controller extends BaseController
         }
 
         return false;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isJsonRequest()
+    {
+        return $this->getRequest()->getRequestFormat() == 'json';
+    }
+
+    /**
+     * @param array $json
+     * @return Response
+     */
+    public function createJsonResponse(array $json)
+    {
+        $response = new Response(json_encode($json));
+        $response->headers->set('Content-Type', 'application/json');
+
+        return $response;
     }
 }
