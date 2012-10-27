@@ -1,17 +1,11 @@
 discussione_discussion_view:
-    pattern: /discussions/{id}/
+    pattern: /discussions/{id}/{_format}
     defaults: { _controller: DiscussioneDiscussionBundle:Discussion:view, _format: 'html' }
     requirements:
         _method: GET
 
-discussione_discussion_view_json:
-    pattern: /discussions/{id}/json/
-    defaults: { _controller: DiscussioneDiscussionBundle:Discussion:view, _format: 'json' }
-    requirements:
-        _method: GET
-
 discussione_discussion_list:
-    pattern: /discussions/
+    pattern: /discussions
     defaults: { _controller: DiscussioneDiscussionBundle:Discussion:list }
     requirements:
         _method: GET
