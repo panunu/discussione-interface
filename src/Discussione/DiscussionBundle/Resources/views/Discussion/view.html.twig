@@ -1,78 +1,38 @@
-<script src="//d3js.org/d3.v2.min.js"></script>
-<script src="/js/underscore-min.js"></script>
-<script src="/js/coffee-script.js"></script>
+{% extends 'DiscussioneMainBundle::layout.html.twig' %}
 
-<style>
-    text {
-        font-size: 0.75em;
-    }
+{% block body %}
+    <style>
+        body { background-image: url('/images/bg.png'); }
 
-    #bubble-chart { width: 800px; margin-left: auto; margin-right: auto; cursor: default; }
-    svg g:first-child { display: none; }
-    svg .node circle { opacity: 0.5; transition: all 1s ease-in-out; -webkit-transition: all 1s ease-in-out; }
-    svg .node text { text-shadow: 1px 1px 4px white; }
-    svg .node:hover circle { opacity: 1.0; }
+        text { font-size: 0.75em; }
 
-</style>
+        #bubble-chart { width: 800px; margin-left: auto; margin-right: auto; cursor: default; }
 
-<div class="discussion">
+        svg g:first-child { display: none; }
+        svg .node circle { opacity: 0.25; transition: all 1s ease-in-out; -webkit-transition: all 1s ease-in-out; }
+        svg .node text { text-shadow: 1px 0px 2px white; }
+        svg .node:hover circle { opacity: 1.0; }
+    </style>
 
-    {% for speech in discussion.messages %}
-        {% for keyphrase, frequency in speech.keyphrases %}
-            {{ keyphrase }}
-            {{ frequency }}
+    <div class="discussion">
+
+        {% for speech in discussion.discussion %}
+            {{ speech.data.author }}
+            {{ speech.data.message }}
+
+            {#% for keyphrase, frequency in speech.keyphrases %}
+                {{ keyphrase }}
+                {{ frequency }}
+            {% endfor %#}
         {% endfor %}
-    {% endfor %}
 
-</div>
+    </div>
 
-<div id="bubble-chart"></div>
+    <div id="bubble-chart"></div>
+{% endblock %}
 
-<script type="text/coffeescript">
-
-r = 800
-format = d3.format("f")
-fill = d3.scale.ordinal().range([
-    "#d84b2a",
-    "#beccae",
-    "#7aa25c"
-])
-
-fisheye = d3.fisheye.circular()
-    .radius(200)
-    .distortion(2);
-
-bubble = d3.layout.pack()
-    .sort(null)
-    .size([r, r])
-    .padding(5)
-
-vis = d3.select("#bubble-chart").append("svg")
-    .attr("width", r)
-    .attr("height", r)
-    .attr("class", "bubble")
-
-
-d3.json "{{ path('discussione_discussion_view', { 'id': discussion._id, '_format': 'json' }) }}", (json) ->
-    messages = _.first json.messages
-    keyphrases = { name: '', children: _.map messages.keyphrases, (frequency, keyphrase) -> 'name': keyphrase, 'value': frequency }
-
-    node = vis.selectAll("g.node")
-        .data(bubble.nodes(keyphrases))
-        .enter().append("g")
-            .attr("class", "node")
-            .attr("transform", (d) -> "translate(" + d.x + "," + d.y + ")")
-
-    node.append("circle")
-        .attr("r", (d) -> d.r)
-        .style("fill", (d) -> fill(d.name))
-        .attr("title", (d) -> d.name)
-
-    node.append("text")
-        .attr("text-anchor", "middle")
-        .attr("y", ".3em")
-        .text((d) -> d.name.substring(0, d.r / 3))
-        .style("font-size", "24px")
-        .style("font-size", (d) -> (d.r * 2) / @getComputedTextLength() * 20)
-
-</script>
+{% block javascripts %}
+    {% javascripts '@DiscussioneDiscussionBundle/Resources/public/coffee/bubble.coffee*' filter='coffee' %}
+        <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+{% endblock %}

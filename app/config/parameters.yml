@@ -12,8 +12,9 @@ parameters:
 
     rabbit_host:       localhost
     rabbit_port:       5672
-    rabbit_user:       guest
-    rabbit_password:   guest
+    rabbit_user:       user
+    rabbit_password:   user
+    rabbit_vhost:      /discussione/
 
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
