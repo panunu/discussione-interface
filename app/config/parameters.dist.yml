@@ -1,0 +1,22 @@
+parameters:
+    database_host:     localhost
+    database_port:     27017
+    database_name:     discussione
+    database_user:     root
+    database_password: ~
+
+    mailer_transport:  smtp
+    mailer_host:       localhost
+    mailer_user:       ~
+    mailer_password:   ~
+
+    rabbit_host:       localhost
+    rabbit_port:       5672
+    rabbit_user:       user
+    rabbit_password:   user
+    rabbit_vhost:      /discussione/
+
+    locale:            en
+    secret:            ThisTokenIsNotSoSecretChangeIt
+
+    node_bin:          /opt/local/bin/node

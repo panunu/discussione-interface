@@ -1,26 +1,18 @@
-Discussione
-===========
+# Discussione
 
-1) Installation
-----------------------------------
+## Installation
 
-If you don't have Composer yet, download it following the instructions on
-http://getcomposer.org/ or just run the following command:
+Install dependencies with Composer.
 
     curl -s https://getcomposer.org/installer | php
-
-After installing Composer, install the dependencies with:
-
     php composer.phar install
 
-2) Checking your System Configuration
--------------------------------------
+Add Node modules to the project (avoid global modules). Be sure to set the ```node_bin``` property in parameters.yml.
 
-Before starting coding, make sure that your local system is properly
-configured for Symfony.
+    npm install less
+    npm install coffee-script
 
-Execute the `check.php` script from the command line:
+### Check configuration
 
     php app/check.php
 
-If you get any warnings or recommendations, fix them before moving on.
