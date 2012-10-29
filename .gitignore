@@ -6,6 +6,7 @@ build/
 node_modules
 vendor
 composer.phar
+app/config/parameters.yml
 
 .DS_Store
 .idea
