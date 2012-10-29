@@ -8,5 +8,8 @@ vendor
 composer.phar
 app/config/parameters.yml
 
+web/css/*
+web/js/*
+
 .DS_Store
 .idea

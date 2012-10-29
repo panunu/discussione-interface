@@ -10,7 +10,11 @@ framework:
     form:            true
     csrf_protection: true
     validation:      { enable_annotations: true }
-    templating:      { engines: ['twig'] }
+    templating:
+        engines: ['twig']
+        assets_version: 1
+        assets_version_format: %%2$s/%%1$s
+
     default_locale:  %locale%
     trust_proxy_headers: false
     session:         ~
@@ -34,6 +38,10 @@ assetic:
             bin: "%kernel.root_dir%/../node_modules/coffee-script/bin/coffee"
             node: %node_bin%
             apply_to: "\.coffee$"
+        yui_css:
+            jar: "%kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar"
+        yui_js:
+            jar: "%kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar"
 
 
 # Mongo Configuration
