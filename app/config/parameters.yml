@@ -19,3 +19,4 @@ parameters:
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
 
+    node_bin:          /opt/local/bin/node

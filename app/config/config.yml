@@ -3,8 +3,6 @@ imports:
     - { resource: security.yml }
 
 framework:
-    #esi:             ~
-    #translator:      { fallback: %locale% }
     secret:          %secret%
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -12,9 +10,9 @@ framework:
     form:            true
     csrf_protection: true
     validation:      { enable_annotations: true }
-    templating:      { engines: ['twig'] } #assets_version: SomeVersionScheme
+    templating:      { engines: ['twig'] }
     default_locale:  %locale%
-    trust_proxy_headers: false # Whether or not the Request object should trust proxy headers (X_FORWARDED_FOR/HTTP_CLIENT_IP)
+    trust_proxy_headers: false
     session:         ~
 
 # Twig Configuration
@@ -25,19 +23,18 @@ twig:
 # Assetic Configuration
 assetic:
     debug:          %kernel.debug%
-    use_controller: false
+    use_controller: true
     bundles:        [ DiscussioneMainBundle, DiscussioneDiscussionBundle ]
-    #java: /usr/bin/java
     filters:
         cssrewrite: ~
+        less:
+            node_paths: ["%kernel.root_dir%/../node_modules"]
+            node: %node_bin%
         coffee:
-            bin: /opt/local/bin/node #"%kernel.root_dir%/node_modules/coffee-script/bin/coffee"
-            node: /opt/local/bin/node
+            bin: "%kernel.root_dir%/../node_modules/coffee-script/bin/coffee"
+            node: %node_bin%
             apply_to: "\.coffee$"
-        #closure:
-        #    jar: %kernel.root_dir%/Resources/java/compiler.jar
-        #yui_css:
-        #    jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar
+
 
 # Mongo Configuration
 doctrine_mongodb:
@@ -50,21 +47,6 @@ doctrine_mongodb:
 
     document_managers:
         default:
-
-# Doctrine Configuration
-#doctrine:
-#    dbal:
-#        driver:   %database_driver%
-#        host:     %database_host%
-#        port:     %database_port%
-#        dbname:   %database_name%
-#        user:     %database_user%
-#        password: %database_password%
-#        charset:  UTF8
-
-#    orm:
-#        auto_generate_proxy_classes: %kernel.debug%
-#        auto_mapping: true
 
 # Swiftmailer Configuration
 swiftmailer:

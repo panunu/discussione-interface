@@ -1,6 +1,4 @@
-
-
-bubble = (url) ->
+visualizer = (url) ->
   r = 800
   format = d3.format("f")
   fill = d3.scale.ordinal().range(['white'])

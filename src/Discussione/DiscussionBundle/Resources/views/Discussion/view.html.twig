@@ -1,19 +1,6 @@
 {% extends 'DiscussioneMainBundle::layout.html.twig' %}
 
 {% block body %}
-    <style>
-        body { background-image: url('/images/bg.png'); }
-
-        text { font-size: 0.75em; }
-
-        #bubble-chart { width: 800px; margin-left: auto; margin-right: auto; cursor: default; }
-
-        svg g:first-child { display: none; }
-        svg .node circle { opacity: 0.25; transition: all 1s ease-in-out; -webkit-transition: all 1s ease-in-out; }
-        svg .node text { text-shadow: 1px 0px 2px white; }
-        svg .node:hover circle { opacity: 1.0; }
-    </style>
-
     <div class="discussion">
 
         {% for speech in discussion.discussion %}
@@ -29,10 +16,4 @@
     </div>
 
     <div id="bubble-chart"></div>
-{% endblock %}
-
-{% block javascripts %}
-    {% javascripts '@DiscussioneDiscussionBundle/Resources/public/coffee/bubble.coffee*' filter='coffee' %}
-        <script src="{{ asset_url }}" type="text/javascript"></script>
-    {% endjavascripts %}
 {% endblock %}
