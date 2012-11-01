@@ -1,23 +1,30 @@
 {% extends 'DiscussioneMainBundle::layout.html.twig' %}
 
-{% block body %}
-    <div class="discussion">
+{% block content %}
+    <div class="row">
+        <div class="twelvecol">
+            {% for speech in discussion.discussion %}
+                {{ speech.data.author }}
+                {{ speech.data.message }}
 
-        {% for speech in discussion.discussion %}
-            {{ speech.data.author }}
-            {{ speech.data.message }}
-
-            {#% for keyphrase, frequency in speech.keyphrases %}
-                {{ keyphrase }}
-                {{ frequency }}
-            {% endfor %#}
-        {% endfor %}
-
+                {#% for keyphrase, frequency in speech.keyphrases %}
+                    {{ keyphrase }}
+                    {{ frequency }}
+                {% endfor %#}
+            {% endfor %}
+        </div>
     </div>
 
-    <div id="bubble-chart"></div>
+    <div class="row">
+        <div class="twelvecol">
+            <div id="bubble-chart"></div>
+        </div>
+    </div>
 
     <script type="text/javascript">
-        visualizer('{{ path('discussione_discussion_view', { 'id': discussion._id, '_format': 'json' }) }}');
+        visualizer(
+            '#bubble-chart',
+            '{{ path('discussione_discussion_view', { 'id': discussion._id, '_format': 'json' }) }}'
+        );
     </script>
 {% endblock %}

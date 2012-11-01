@@ -1,4 +1,4 @@
-visualizer = (url) ->
+visualizer = (element, url) ->
   r = 800
   format = d3.format("f")
   fill = d3.scale.ordinal().range(['white'])
@@ -8,7 +8,7 @@ visualizer = (url) ->
     .size([r, r])
     .padding(5)
 
-  vis = d3.select("#bubble-chart").append("svg")
+  vis = d3.select(element).append("svg")
     .attr("viewBox", "0 0 " + r + " " + r)
     .attr("preserveAspectRatio", "xMinYMin meet")
     .attr("class", "bubble")
