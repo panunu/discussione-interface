@@ -16,4 +16,8 @@
     </div>
 
     <div id="bubble-chart"></div>
+
+    <script type="text/javascript">
+        visualizer('{{ path('discussione_discussion_view', { 'id': discussion._id, '_format': 'json' }) }}');
+    </script>
 {% endblock %}

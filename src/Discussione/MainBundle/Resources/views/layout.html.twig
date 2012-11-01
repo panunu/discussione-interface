@@ -10,10 +10,11 @@
     {% javascripts '@DiscussioneMainBundle/Resources/js/*' filter='?yui_js' output='js/libraries.js' %}
         <script src="{{ asset_url }}" type="text/javascript"></script>
     {% endjavascripts %}
-{% endblock %}
 
-{% block javascripts %}
     {% javascripts '@DiscussioneDiscussionBundle/Resources/coffee/*' filter='coffee, ?yui_js' output='js/main.js' %}
         <script src="{{ asset_url }}" type="text/javascript"></script>
     {% endjavascripts %}
+{% endblock %}
+
+{% block javascripts %}
 {% endblock %}

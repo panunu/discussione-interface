@@ -37,3 +37,5 @@ visualizer = (url) ->
       .text((d) -> d.name.substring(0, d.r / 3))
       .style("font-size", "24px")
       .style("font-size", (d) -> (d.r * 2) / @getComputedTextLength() * 20)
+
+(exports ? this).visualizer = visualizer
