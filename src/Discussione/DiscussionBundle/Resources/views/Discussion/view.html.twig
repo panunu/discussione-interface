@@ -1,25 +1,39 @@
 {% extends 'DiscussioneMainBundle::layout.html.twig' %}
 
 {% block content %}
-    <div class="row">
+    <section class="row">
         <div class="twelvecol">
             {% for speech in discussion.discussion %}
-                {{ speech.data.author }}
-                {{ speech.data.message }}
+                <div class="row">
+                    <div class="threecol">
+                        <span class="icon-comment-alt"></span>
+                        {{ speech.data.author }}
+                    </div>
 
-                {#% for keyphrase, frequency in speech.keyphrases %}
-                    {{ keyphrase }}
-                    {{ frequency }}
-                {% endfor %#}
+                    <div class="ninecol last">
+                        {% for keyphrase, frequency in speech.keyphrases %}
+                            {{ keyphrase }}
+                            {{ frequency }}
+                        {% endfor %}
+                    </div>
+                </div>
+
+                {#<div class="row">
+                    <div class="threecol"></div>
+
+                    <div class="ninecol last">
+                        {{ speech.data.message }}
+                    </div>
+                </div>#}
             {% endfor %}
         </div>
-    </div>
+    </section>
 
-    <div class="row">
+    <section class="row">
         <div class="twelvecol">
             <div id="bubble-chart"></div>
         </div>
-    </div>
+    </section>
 
     <script type="text/javascript">
         visualizer(

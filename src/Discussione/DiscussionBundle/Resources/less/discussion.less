@@ -1,0 +1,17 @@
+#bubble-chart {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+
+  svg {
+    text { font-size: 0.75em; }
+    g:first-child { display: none; }
+
+    .node {
+      circle { opacity: 0.25; transition: all 1s ease-in-out; -webkit-transition: all 1s ease-in-out; }
+      text { text-shadow: 1px 0px 2px white; }
+
+      &:hover circle { opacity: 1.0; }
+    }
+  }
+}

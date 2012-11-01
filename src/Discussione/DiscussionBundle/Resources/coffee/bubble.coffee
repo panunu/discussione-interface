@@ -1,5 +1,5 @@
 visualizer = (element, url) ->
-  r = 800
+  r = 1140
   format = d3.format("f")
   fill = d3.scale.ordinal().range(['white'])
 

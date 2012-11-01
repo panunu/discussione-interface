@@ -2,8 +2,15 @@
 
 {% block stylesheets %}
     {% stylesheets
+        '@DiscussioneMainBundle/Resources/css/*' filter='cssrewrite, ?yui_css' %}
+        <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="all" />
+    {% endstylesheets %}
+
+    {% stylesheets
+        '@DiscussioneMainBundle/Resources/css/*'
         '@DiscussioneMainBundle/Resources/less/*'
-        '@DiscussioneMainBundle/Resources/css/*' filter='less, cssrewrite, ?yui_css' %}
+        '@DiscussioneDiscussionBundle/Resources/less/*'
+            filter='less, cssrewrite, ?yui_css' %}
         <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="all" />
     {% endstylesheets %}
 {% endblock %}
