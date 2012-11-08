@@ -8,6 +8,9 @@
                     <div class="threecol">
                         <span class="icon-comment-alt"></span>
                         {{ speech.data.author }}
+
+                        <br>
+                        <small>{{ speech.data.date }}</small>
                     </div>
 
                     <div class="ninecol last">
@@ -30,15 +33,15 @@
     </section>
 
     <section class="row">
-        <div class="twelvecol">
-            <div id="bubble-chart"></div>
+        <div class="twelvecol" id="bubble-chart">
         </div>
+
+        <script type="text/javascript">
+            visualizer(
+                '#bubble-chart',
+                '{{ path('discussione_discussion_view', { 'id': discussion._id, '_format': 'json' }) }}'
+            );
+        </script>
     </section>
 
-    <script type="text/javascript">
-        visualizer(
-            '#bubble-chart',
-            '{{ path('discussione_discussion_view', { 'id': discussion._id, '_format': 'json' }) }}'
-        );
-    </script>
 {% endblock %}

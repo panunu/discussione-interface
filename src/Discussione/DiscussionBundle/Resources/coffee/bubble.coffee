@@ -10,7 +10,7 @@ visualizer = (element, url) ->
 
   vis = d3.select(element).append("svg")
     .attr("viewBox", "0 0 " + r + " " + r)
-    .attr("preserveAspectRatio", "xMinYMin meet")
+    .attr("preserveAspectRatio", "xMidYMid meet")
     .attr("class", "bubble")
 
   d3.json url, (json) ->
