@@ -3,7 +3,7 @@
 {% block content %}
     <section class="row">
         <div class="twelvecol">
-            {% for speech in discussion.discussion %}
+            {% for speech in discussion.discussions %}
                 <div class="row">
                     <div class="threecol">
                         <span class="icon-comment-alt"></span>
@@ -32,16 +32,21 @@
         </div>
     </section>
 
-    <section class="row">
-        <div class="twelvecol" id="bubble-chart">
-        </div>
 
-        <script type="text/javascript">
-            visualizer(
-                '#bubble-chart',
-                '{{ path('discussione_discussion_view', { 'id': discussion._id, '_format': 'json' }) }}'
-            );
-        </script>
+
+    <section class="row">
+        <div class="twelvecol" id="bubble-chart"></div>
     </section>
+
+    <section class="row">
+        <div class="twelvecol" id="stream-graph"></div>
+    </section>
+
+    <script type="text/javascript">
+        d3.json('{{ path('discussione_discussion_view', { 'id': discussion._id, '_format': 'json' }) }}', function(data) {
+            visualizer('#bubble-chart', data);
+            stream('#stream-graph', data);
+        });
+    </script>
 
 {% endblock %}
