@@ -1,9 +1,11 @@
+svg {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #bubble-chart {
   svg {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-
     text { font-size: 0.75em; }
     g:first-child { display: none; }
 
@@ -13,5 +15,12 @@
 
       &:hover circle { opacity: 1.0; }
     }
+  }
+}
+
+#stream-graph {
+  path {
+    transition: all 1s ease-in-out; -webkit-transition: all 1s ease-in-out;
+    &:hover { fill: crimson !important; stroke-width: 2px; stroke: crimson; }
   }
 }
