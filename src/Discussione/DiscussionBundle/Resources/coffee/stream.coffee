@@ -1,22 +1,6 @@
 stream = (element, data) ->
-  n = 20
-  m = 200
-
-
-  stream_index = (d, i) ->
-    { x: i, y: Math.max(0, d)}
-
-  stream_waves = (n, m) ->
-    return d3.range(n).map (i) ->
-      return d3.range(m).map((j) ->
-        x = 5 * j / m - i / 3
-        return 2 * x * Math.exp(-0.5 * x)
-      ).map stream_index
-
   n = 10
   m = _.first(_.toArray(data.summary.stream)).length
-
-  console.log data.summary.stream
 
   data = d3.layout.stack().offset("wiggle")(_.toArray(data.summary.stream))
   color = d3.interpolateRgb("black", "white")
@@ -40,8 +24,8 @@ stream = (element, data) ->
   vis.selectAll("path")
     .data(data)
     .enter().append("path")
-    .attr("d", area)
-    .attr("title", (d, i) -> d[i].name)
     .style("fill", -> color(Math.random()))
+    .attr("d", area)
+    .attr("title", (d, i) -> _.first(d).name)
 
 (exports ? this).stream = stream

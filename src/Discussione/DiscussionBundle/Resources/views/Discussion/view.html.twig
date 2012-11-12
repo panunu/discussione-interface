@@ -31,9 +31,6 @@
             {% endfor %}
         </div>
     </section>
-
-
-
     <section class="row">
         <div class="twelvecol" id="bubble-chart"></div>
     </section>
@@ -42,10 +39,30 @@
         <div class="twelvecol" id="stream-graph"></div>
     </section>
 
+    <section class="row">
+        <div class="twelvecol" id="awards">
+            {% set awards = {
+                'mostWords':  'bullhorn',
+                'leastWords': 'headphones',
+            } %}
+
+            {% for award, receiver in discussion.summary.awards %}
+                <div class="fourcol award">
+                    <i class="{{ 'icon-' ~ awards[award] }}" title="Eniten sanoja"></i>
+                    <br>{{ receiver }}
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
     <script type="text/javascript">
         d3.json('{{ path('discussione_discussion_view', { 'id': discussion._id, '_format': 'json' }) }}', function(data) {
             visualizer('#bubble-chart', data);
             stream('#stream-graph', data);
+        });
+
+        $(document).ready(function() {
+            $('path, i').tipsy({fade: true, live: true, gravity: 's'});
         });
     </script>
 
