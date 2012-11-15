@@ -10,17 +10,17 @@ svg {
     g:first-child { display: none; }
 
     .node {
-      circle { opacity: 0.25; transition: all 1s ease-in-out; -webkit-transition: all 1s ease-in-out; }
-      text { text-shadow: 1px 0px 2px white; }
+      transition: opacity 1s ease-in-out; -webkit-transition: opacity 1s ease-in-out;
 
-      &:hover circle { opacity: 1.0; }
+      text { text-shadow: 1px 0px 2px white; }
+      &:hover { opacity: 1.0 !important; }
     }
   }
 }
 
 #stream-graph {
   path {
-    transition: all 1s ease-in-out; -webkit-transition: all 1s ease-in-out;
+    transition: fill 1s ease-in-out; -webkit-transition: fill 1s ease-in-out;
     &:hover { fill: crimson !important; stroke-width: 2px; stroke: crimson; stroke-dasharray: 2, 2; }
   }
 }
@@ -35,12 +35,13 @@ svg {
     height: 150px;
     margin-bottom: 10px;
 
-    border-radius: 75px;
     background-color: crimson;
+    border-radius: 75px;
 
     font-size: 75px;
     line-height: 165px;
     vertical-align: middle;
     color: white;
+    text-shadow: -1px -1px 1px black;
   }
 }

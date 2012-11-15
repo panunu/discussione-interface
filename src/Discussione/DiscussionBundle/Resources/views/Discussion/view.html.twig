@@ -20,17 +20,10 @@
                         {% endfor %}
                     </div>
                 </div>
-
-                {#<div class="row">
-                    <div class="threecol"></div>
-
-                    <div class="ninecol last">
-                        {{ speech.data.message }}
-                    </div>
-                </div>#}
             {% endfor %}
         </div>
     </section>
+
     <section class="row">
         <div class="twelvecol" id="bubble-chart"></div>
     </section>
@@ -39,19 +32,20 @@
         <div class="twelvecol" id="stream-graph"></div>
     </section>
 
-    <section class="row">
-        <div class="twelvecol" id="awards">
-            {% set awards = {
-                'mostWords':  'bullhorn',
-                'leastWords': 'headphones',
-            } %}
+    <section class="row" id="awards">
+        <div class="fourcol award">
+            <i class="icon-bullhorn" title="Eniten sanoja"></i>
+            <br>{{ discussion.summary.awards['mostWords'] }}
+        </div>
 
-            {% for award, receiver in discussion.summary.awards %}
-                <div class="fourcol award">
-                    <i class="{{ 'icon-' ~ awards[award] }}" title="Eniten sanoja"></i>
-                    <br>{{ receiver }}
-                </div>
-            {% endfor %}
+        <div class="fourcol award">
+            <i class="icon-headphones" title="Vähiten sanoja"></i>
+            <br>{{ discussion.summary.awards['leastWords'] }}
+        </div>
+
+        <div class="fourcol award last">
+            <i class="icon-comments" title="Eniten puheenvuoroja"></i>
+            <br>{{ discussion.summary.awards['mostDiscussions'] }}
         </div>
     </section>
 
@@ -59,6 +53,7 @@
         d3.json('{{ path('discussione_discussion_view', { 'id': discussion._id, '_format': 'json' }) }}', function(data) {
             visualizer('#bubble-chart', data);
             stream('#stream-graph', data);
+            //flow('#flow-graph', data);
         });
 
         $(document).ready(function() {

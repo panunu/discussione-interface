@@ -1,12 +1,12 @@
 stream = (element, data) ->
-  n = 10
   m = _.first(_.toArray(data.summary.stream)).length
 
   data = d3.layout.stack().offset("wiggle")(_.toArray(data.summary.stream))
   color = d3.interpolateRgb("black", "white")
 
-  width = 860
-  height = 500
+  width = 1140
+  height = 600
+
   mx = m - 1
   my = d3.max(data, (d) ->
     d3.max(d, (d) ->
@@ -20,6 +20,8 @@ stream = (element, data) ->
     .y1((d) -> height - (d.y + d.y0) * height / my)
 
   vis = d3.select(element).append('svg')
+    .attr("viewBox", "0 0 " + width + " " + height)
+    .attr("preserveAspectRatio", "xMidYMid meet")
 
   vis.selectAll("path")
     .data(data)

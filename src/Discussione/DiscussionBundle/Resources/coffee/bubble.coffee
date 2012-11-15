@@ -1,12 +1,12 @@
 visualizer = (element, data) ->
   r = 1140
+
   format = d3.format("f")
   fill = d3.scale.ordinal().range(['white'])
 
   bubble = d3.layout.pack()
-    .sort(null)
+    .sort((a, b) -> b.value - a.value)
     .size([r, r])
-    .padding(5)
 
   vis = d3.select(element).append("svg")
     .attr("viewBox", "0 0 " + r + " " + r)
@@ -24,6 +24,7 @@ visualizer = (element, data) ->
     .enter().append("g")
     .attr("class", "node")
     .attr("transform", (d) -> "translate(" + d.x + "," + d.y + ")")
+    .style("opacity", (d) -> d.value + d.value / 2)
 
   node.append("circle")
     .attr("r", (d) -> d.r)
