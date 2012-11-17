@@ -10,9 +10,6 @@ class ProcessedConsumer implements ConsumerInterface
 {
     private $documentService;
 
-    /**
-     * @param DocumentService $documentService
-     */
     public function __construct(DocumentService $documentService)
     {
         $this->documentService = $documentService;
