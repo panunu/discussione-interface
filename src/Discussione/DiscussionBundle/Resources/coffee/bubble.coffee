@@ -1,4 +1,4 @@
-visualizer = (element, data) ->
+bubble = (element, data) ->
   r = 1140
 
   format = d3.format("f")
@@ -38,4 +38,4 @@ visualizer = (element, data) ->
     .style("font-size", "24px")
     .style("font-size", (d) -> (d.r * 2) / @getComputedTextLength() * 20)
 
-(exports ? this).visualizer = visualizer
+(exports ? this).bubble = bubble

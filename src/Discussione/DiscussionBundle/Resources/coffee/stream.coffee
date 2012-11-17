@@ -18,6 +18,7 @@ stream = (element, data) ->
     .x((d) -> d.x * width / mx)
     .y0((d) -> height - d.y0 * height / my)
     .y1((d) -> height - (d.y + d.y0) * height / my)
+    .interpolate("monotone")
 
   vis = d3.select(element).append('svg')
     .attr("viewBox", "0 0 " + width + " " + height)

@@ -2,8 +2,14 @@
 
 {% block content %}
     <section class="row">
+        <div class="twelvecol text-center">
+            <h1>Keskustelun aihe</h1>
+        </div>
+    </section>
+
+    <section class="row">
         <div class="twelvecol">
-            {% for speech in discussion.discussions %}
+            {#% for speech in discussion.discussions %}
                 <div class="row">
                     <div class="threecol">
                         <span class="icon-comment-alt"></span>
@@ -20,7 +26,7 @@
                         {% endfor %}
                     </div>
                 </div>
-            {% endfor %}
+            {% endfor %#}
         </div>
     </section>
 
@@ -30,6 +36,10 @@
 
     <section class="row">
         <div class="twelvecol" id="stream-graph"></div>
+    </section>
+
+    <section class="row">
+        <div class="twelvecol" id="diff-graph"></div>
     </section>
 
     <section class="row" id="awards">
@@ -51,13 +61,14 @@
 
     <script type="text/javascript">
         d3.json('{{ path('discussione_discussion_view', { 'id': discussion._id, '_format': 'json' }) }}', function(data) {
-            visualizer('#bubble-chart', data);
+            bubble('#bubble-chart', data);
             stream('#stream-graph', data);
-            //flow('#flow-graph', data);
+            difference('#diff-graph', data);
         });
 
         $(document).ready(function() {
-            $('path, i').tipsy({fade: true, live: true, gravity: 's'});
+            $('#stream-graph path, #awards i, #diff-graph circle')
+                .tipsy({fade: true, live: true, gravity: 's'});
         });
     </script>
 

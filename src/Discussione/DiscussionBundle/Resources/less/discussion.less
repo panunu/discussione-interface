@@ -21,7 +21,7 @@ svg {
 #stream-graph {
   path {
     transition: fill 1s ease-in-out; -webkit-transition: fill 1s ease-in-out;
-    &:hover { fill: crimson !important; stroke-width: 2px; stroke: crimson; stroke-dasharray: 2, 2; }
+    &:hover { fill: crimson !important; stroke-width: 1px; stroke: crimson; }
   }
 }
 
@@ -43,5 +43,8 @@ svg {
     vertical-align: middle;
     color: white;
     text-shadow: -1px -1px 1px black;
+
+    transition: all 1s ease-in-out; -webkit-transition: all 1s ease-in-out;
+    &:hover { -webkit-transform: rotate(-10deg); }
   }
 }
