@@ -1,4 +1,0 @@
-services:
-    discussione_document.service.document:
-        class: Discussione\DocumentBundle\Service\DocumentService
-        arguments: ["@doctrine.odm.mongodb.default_connection"]

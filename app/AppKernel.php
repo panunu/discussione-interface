@@ -25,12 +25,10 @@ class AppKernel extends Kernel
 	private function getApplicationBundles()
 	{
 		return [
-            new Discussione\FrameworkBundle\DiscussioneFrameworkBundle(),
-            new Discussione\MainBundle\DiscussioneMainBundle(),
-            new Discussione\UploadBundle\DiscussioneUploadBundle(),
-            new Discussione\DocumentBundle\DiscussioneDocumentBundle(),
-            new Discussione\MessageBundle\DiscussioneMessageBundle(),
-            new Discussione\DiscussionBundle\DiscussioneDiscussionBundle(),
+            new Discussione\Bundle\FrameworkBundle\DiscussioneFrameworkBundle(),
+            new Discussione\Bundle\MainBundle\DiscussioneMainBundle(),
+            new Discussione\Bundle\UploadBundle\DiscussioneUploadBundle(),
+            new Discussione\Bundle\DiscussionBundle\DiscussioneDiscussionBundle(),
 		];
 	}
 

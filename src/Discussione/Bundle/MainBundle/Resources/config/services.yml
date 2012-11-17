@@ -1,0 +1,12 @@
+services:
+    discussione.service.document:
+        class: Discussione\Service\DocumentService
+        arguments: ["@doctrine.odm.mongodb.default_connection"]
+
+    discussione.service.message:
+        class: Discussione\Service\MessageService
+        arguments: ["@old_sound_rabbit_mq.unprocessed_producer"]
+
+    discussione.consumer.processed:
+        class: Discussione\Consumer\ProcessedConsumer
+        arguments: ["@discussione.service.document"]
