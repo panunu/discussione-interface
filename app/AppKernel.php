@@ -24,26 +24,26 @@ class AppKernel extends Kernel
 
 	private function getApplicationBundles()
 	{
-		return array(
+		return [
             new Discussione\FrameworkBundle\DiscussioneFrameworkBundle(),
             new Discussione\MainBundle\DiscussioneMainBundle(),
             new Discussione\UploadBundle\DiscussioneUploadBundle(),
             new Discussione\DocumentBundle\DiscussioneDocumentBundle(),
             new Discussione\MessageBundle\DiscussioneMessageBundle(),
             new Discussione\DiscussionBundle\DiscussioneDiscussionBundle(),
-		);
+		];
 	}
 
 	private function getExternalBundles()
 	{
-		return array(
+		return [
 			new OldSound\RabbitMqBundle\OldSoundRabbitMqBundle(),
-		);
+		];
 	}
 
 	private function getDefaultBundles()
 	{
-		return array(
+		return [
 			new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
 			new Symfony\Bundle\SecurityBundle\SecurityBundle(),
 			new Symfony\Bundle\TwigBundle\TwigBundle(),
@@ -55,7 +55,7 @@ class AppKernel extends Kernel
 			new JMS\AopBundle\JMSAopBundle(),
 			new JMS\DiExtraBundle\JMSDiExtraBundle($this),
 			new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
-		);
+		];
 	}
 
     public function registerContainerConfiguration(LoaderInterface $loader)
