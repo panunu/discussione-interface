@@ -1,9 +1,5 @@
 difference = (element, data) ->
-
-  color = d3.interpolateRgb("red", "white")
-
-
-  data = _.range(0, 50).map((x) -> { author: "A", x: x, y: Math.random(), z: Math.random()})
+  data = data.summary.differences
 
   width = 1140
   height = 400
@@ -18,7 +14,7 @@ difference = (element, data) ->
 
   line2 = d3.svg.line()
     .x((d) -> 10 + x(d.x))
-    .y((d) -> y(d.z))
+    .y((d) -> y(d.y))
     .interpolate("basis")
 
   vis = d3.select(element)
@@ -27,10 +23,6 @@ difference = (element, data) ->
     .attr("viewBox", "0 0 " + width + " " + height)
     .attr("preserveAspectRatio", "xMidYMid meet")
     .attr("class", "bubble")
-
-  rules = vis.selectAll("g.rule")
-    .data(data)
-    .enter()
 
   vis.append("svg:path")
     .attr("d", line2)

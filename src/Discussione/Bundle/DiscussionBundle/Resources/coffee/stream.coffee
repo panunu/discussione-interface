@@ -29,6 +29,6 @@ stream = (element, data) ->
     .enter().append("path")
     .style("fill", -> color(Math.random()))
     .attr("d", area)
-    .attr("title", (d, i) -> _.first(d).name)
+    .attr("title", (d, i) -> _.first(d).word)
 
 (exports ? this).stream = stream
