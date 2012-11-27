@@ -14,7 +14,7 @@ difference = (element, data) ->
 
   line2 = d3.svg.line()
     .x((d) -> 10 + x(d.x))
-    .y((d) -> y(d.y))
+    .y((d) -> y(d.z))
     .interpolate("basis")
 
   vis = d3.select(element)
@@ -28,7 +28,7 @@ difference = (element, data) ->
     .attr("d", line2)
     .attr("fill", "none")
     .attr("stroke", "black")
-    .attr("stroke-width", 10)
+    .attr("stroke-width", 50)
     .attr("opacity", 0.1)
 
   vis.append("svg:path")
@@ -44,7 +44,7 @@ difference = (element, data) ->
     .append("svg:circle")
     .attr("fill", (d) -> d3.interpolateRgb("crimson", "grey")(Math.random()))
     .attr("cx", (d) -> 10 + x(d.x))
-    .attr("cy", height)
+    .attr("cy", (d) -> y(d.y))
     .attr("title", (d) -> d.author)
     .attr("r", 5)
 

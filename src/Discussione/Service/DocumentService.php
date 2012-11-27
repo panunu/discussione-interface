@@ -45,9 +45,9 @@ class DocumentService
      */
     public function getById($id)
     {
-        return $this->getCollection()->findOne(
-            ['_id' => new MongoId($id)]
-        );
+        return $this->getCollection()->findOne([
+            '_id' => new MongoId($id)
+        ]);
     }
 
     /**

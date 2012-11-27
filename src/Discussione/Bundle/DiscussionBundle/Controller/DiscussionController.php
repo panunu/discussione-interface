@@ -20,16 +20,16 @@ class DiscussionController extends Controller
             return $this->createJsonResponse($discussion);
         }
 
-        return $this->render('DiscussioneDiscussionBundle:Discussion:view.html.twig', array(
+        return $this->render('DiscussioneDiscussionBundle:Discussion:view.html.twig', [
             'discussion' => $discussion
-        ));
+        ]);
     }
 
     public function listAction()
     {
-        return $this->render('DiscussioneDiscussionBundle:Discussion:list.html.twig', array(
+        return $this->render('DiscussioneDiscussionBundle:Discussion:list.html.twig', [
             'discussions' => $this->getDocumentService()->all()
-        ));
+        ]);
     }
 
     /**

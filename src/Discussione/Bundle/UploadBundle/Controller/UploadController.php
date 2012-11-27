@@ -25,9 +25,9 @@ class UploadController extends Controller
             // TODO: Show a loader animation, and check for every 10 seconds if material has been processed.
         }
 
-        return $this->render('DiscussioneUploadBundle:Upload:upload.html.twig', array(
+        return $this->render('DiscussioneUploadBundle:Upload:upload.html.twig', [
             'form' => $form->createView()
-        ));
+        ]);
     }
 
     /**
